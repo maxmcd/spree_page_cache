@@ -1,3 +1,8 @@
+Maxmcd/SpreePageCache
+===========
+
+This is a modified version of spree/spree_page_cache that uses action caching instead of page caching for use on heroku, modified readme below:
+
 SpreePageCache
 ===========
 
@@ -10,15 +15,15 @@ You generally need to include the following overrides into your application:
 ````ruby
 
 Spree::HomeController.class_eval do
-  caches_page :index
+  caches_action :index
 end
 
 Spree::ProductsController.class_eval do
-  caches_page :index, :show
+  caches_action :index, :show
 end
 
 Spree::TaxonsController.class_eval do
-  caches_page :index, :show
+  caches_action :index, :show
 end
 
 ````
@@ -28,7 +33,7 @@ Setup
 --------------------
 Add this to your gem file Gemfile
 
-    gem "spree_page_cache"
+    gem "spree_page_cache", :github => 'maxmcd/spree_page_cache'
 
     rake spree_page_cache:install
 

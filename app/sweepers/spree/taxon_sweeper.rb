@@ -3,8 +3,8 @@ module Spree
     observe Taxon
 
     def after_save(taxon)
-      expire_page "/"
-      expire_page products_path
+      expire_action "/"
+      expire_action products_path
       FileUtils.rm_rf "#{page_cache_directory}/products"
       FileUtils.rm_rf "#{page_cache_directory}/t"
     end
