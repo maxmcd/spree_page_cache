@@ -35,8 +35,7 @@ Add this to your gem file Gemfile
 
     gem "spree_page_cache", :github => 'maxmcd/spree_page_cache'
 
-    rake spree_page_cache:install
-
+    rails g spree_page_caching:install
 
 Copyright (c) 2011 Neeraj Singh, released under the New BSD License
 
